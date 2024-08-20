@@ -7,4 +7,5 @@ coverage
 .TODO
 yarn-error.log
 *.log
+*.lock
 .env
