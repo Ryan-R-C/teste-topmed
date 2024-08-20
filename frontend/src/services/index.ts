@@ -1,6 +1,6 @@
 import axios from 'axios'
 
-const REACT_APP_BACKENDURL = import.meta.env.VITE_BACKENDURL
+const REACT_APP_BACKENDURL = import.meta.env.VITE_BACKEND_URL
 
 export const ip = `${REACT_APP_BACKENDURL}`
 
