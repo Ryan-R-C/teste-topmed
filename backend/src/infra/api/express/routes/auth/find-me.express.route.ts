@@ -33,13 +33,13 @@ export class FindMeRoute implements Route {
             const output = await this.findMeService.execute({ token });
 
             if(!output){
-                response.status(401).json().send();
+                response.status(401).json();
                 return
             }
-
+            
             const responseBody = this.present(output);
 
-            response.status(200).json(responseBody).send();
+            response.status(200).json(responseBody);
         };
     }
 

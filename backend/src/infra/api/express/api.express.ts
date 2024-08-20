@@ -1,6 +1,7 @@
 import { Api } from "../api";
 import express, { Express } from "express";
 import { Route } from "./routes/route";
+import cors from 'cors'
 
 export class ApiExpress implements Api {
     private app: Express;
@@ -8,6 +9,7 @@ export class ApiExpress implements Api {
     private constructor(routes: Route[]) {
         this.app = express();
         this.app.use(express.json());
+        this.configCors()
         this.addRoutes(routes);
     }
 
@@ -23,6 +25,15 @@ export class ApiExpress implements Api {
 
             this.app[method](path, handler);
         });
+    }
+
+    private configCors(){
+        this.app.use(cors({ origin: '*' }))
+        this.app.use((_, res, next) => {
+          res.header('Access-Control-Allow-Origin', '*')
+          res.header('Access-Control-Allow-Methods', 'GET,PUT,POST,DELETE')
+          next()
+        })
     }
 
     public start(port: number) {

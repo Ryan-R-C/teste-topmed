@@ -25,6 +25,11 @@ export class LoginRoute implements Route {
         return async (request: Request, response: Response) => {
             const { password, email } = request.body;
 
+            if(!password || !email) {
+                response.status(500).json({message: 'Missing arguments'}).send();
+                return
+            }
+
             const input: LoginInputDto = {
                 password,
                 email,

@@ -27,6 +27,12 @@ export class CreateUserRoute implements Route {
     public getHandler() {
         return async (request: Request, response: Response) => {
             const { name, email, password } = request.body;
+            
+            if(!password || !email || !name) {
+                response.status(500).json({message: 'Missing arguments'});
+                return
+            }
+
 
             const input: CreateUserInputDto = {
                 name,
@@ -39,7 +45,7 @@ export class CreateUserRoute implements Route {
 
             const responseBody = this.present(output);
 
-            response.status(201).json(responseBody).send();
+            response.status(201).json(responseBody);
         };
     }
 
