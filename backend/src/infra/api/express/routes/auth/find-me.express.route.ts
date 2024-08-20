@@ -28,7 +28,7 @@ export class FindMeRoute implements Route {
 
     public getHandler() {
         return async (request: Request, response: Response) => {
-            const token: string | undefined = request.headers['x-acess-token'] as string
+            const token: string | undefined = request.headers['x-access-token'] as string
 
             const output = await this.findMeService.execute({ token });
 
