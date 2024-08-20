@@ -1,0 +1,43 @@
+@import url('https://fonts.googleapis.com/css2?family=Almarai:wght@300;400;700;800&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+* {
+  box-sizing: border-box;
+  font-family: "Almarai", sans-serif;
+  margin: 0;
+  padding: 0;
+  -webkit-font-smoothing: antialiased;
+}
+
+:root {
+  color-scheme: light;
+
+  --main-color: #358C84;
+  --secondary-color: #3E9F96;
+
+  --neutral: #FFF;
+  
+  --error-color: #991616;
+  --error-background: #E23A3A54;
+  
+  --sucess-color: #28625C;
+  --sucess-background: #3E9F9663;
+
+  --main-text-color: #000000;
+  --secondary-text-color: #5C5959;
+
+  --alternative-text-color: #FFFBFB;
+  --secondary-alternative-color: #ACCFCD;;
+
+  --default-background: #96ABBE;
+
+  --main-box-shadow: 4px 0px 4px 0px #00000040 inset;
+}
+
+body {
+  background-color: var(--default-background);
+}
