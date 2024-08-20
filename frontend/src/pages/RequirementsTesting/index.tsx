@@ -28,12 +28,6 @@ export const RequirementsTesting: React.FC = () => {
             messageSucess: 'Acesso à câmera disponível.',
         },
         {
-            item: 'browser-compatibility',
-            isError: true,
-            messageError: 'Navegador não compatível - Favor utilizar o Google Chrome.',
-            messageSucess: 'Acesso à câmera disponível.',
-        },
-        {
             item: 'microphone-found',
             isError: false,
             messageError: 'Microfone não encontrado.',

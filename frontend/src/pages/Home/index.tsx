@@ -13,7 +13,7 @@ export const Home = () => {
         navigate('/')
     }
 
-    const { findAuth, isError, loadingSubmit, auth} = useAuth()
+    const { findAuth, loadingSubmit, auth} = useAuth()
 
     const handleFindUser = async () => {
         const foundAuth = findAuth()
